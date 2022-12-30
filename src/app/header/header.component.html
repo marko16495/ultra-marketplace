@@ -1,0 +1,20 @@
+<nav class="navbar bg-body-tertiary">
+  <div class="container-fluid">
+    <h1>Marketplace</h1>
+    <div class="d-flex">
+      <button class="btn btn-light bg-transparent me-3" type="button">
+        <i class="bi bi-wallet-fill me-2"></i>
+        <span>$1000</span>
+      </button>
+      <button class="btn btn-light bg-transparent" type="button">
+        <i *ngIf="basketProducts?.length; else emptyBasketIcon" class="bi bi-cart-fill me-2"></i>
+        <ng-template #emptyBasketIcon>
+          <i class="bi bi-cart me-2"></i>
+        </ng-template>
+        <span>
+          Basket ({{basketProducts?.length ?? 0}})
+        </span>
+      </button>
+    </div>
+  </div>
+</nav>
