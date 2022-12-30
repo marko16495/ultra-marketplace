@@ -1,6 +1,9 @@
 import {CommonModule} from '@angular/common';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
+import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {environment} from '../environments/environment';
 import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 
@@ -14,12 +17,18 @@ import {ProductEffects} from './state/effects/product-effects';
 import {reducers, metaReducers} from './state/reducers';
 import {EffectsModule} from '@ngrx/effects';
 
+export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
+
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
+
     AppRoutingModule,
     StoreModule.forRoot(reducers, {
       metaReducers
@@ -29,6 +38,15 @@ import {EffectsModule} from '@ngrx/effects';
       ProductEffects,
       BasketEffects,
     ]),
+
+    TranslateModule.forRoot({
+      defaultLanguage: 'en',
+      loader: {
+        provide: TranslateLoader,
+        useFactory: (createTranslateLoader),
+        deps: [HttpClient]
+      }
+    }),
     CommonModule,
     HeaderModule,
     LayoutModule

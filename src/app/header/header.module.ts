@@ -1,5 +1,6 @@
 import {CommonModule} from '@angular/common';
 import {NgModule} from '@angular/core';
+import {TranslateModule} from '@ngx-translate/core';
 import {HeaderComponent} from './header.component';
 
 @NgModule({
@@ -7,7 +8,8 @@ import {HeaderComponent} from './header.component';
     HeaderComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    TranslateModule
   ],
   exports: [
     HeaderComponent
