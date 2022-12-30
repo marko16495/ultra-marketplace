@@ -1,5 +1,6 @@
+import {HttpErrorResponse} from '@angular/common/http';
 import {Injectable} from '@angular/core';
-import {Observable, of, tap, map} from 'rxjs';
+import {Observable, of, tap, map, throwError} from 'rxjs';
 import {BasketSerialized} from '../../models/serialized/basket-serialized';
 import {randomDelay} from '../../operators/random-delay.operator';
 import {LocalStorageService} from '../local-storage.service';
@@ -17,13 +18,19 @@ export class BasketResourceService {
 
   addProduct(productId: number): Observable<BasketSerialized> {
     const product = this.localStorageService.getProducts().find(p => p.id === productId);
+    const basket = this.localStorageService.getBasket();
+    if (basket.products.findIndex(p => p.id === productId) !== -1) {
+      return throwError(new HttpErrorResponse({
+        error: `Product with id ${productId} already in basket!`
+      }))
+    }
     return of(null)
       .pipe(
         randomDelay(10, 100),
         tap(() => {
           this.localStorageService.setBasket({
             products: [
-              ...this.localStorageService.getBasket().products,
+              ...basket.products,
               product!
             ]
           })
@@ -33,12 +40,18 @@ export class BasketResourceService {
   }
 
   removeProduct(productId: number): Observable<BasketSerialized> {
+    const basket = this.localStorageService.getBasket();
+    if (basket.products.findIndex(p => p.id === productId) === -1) {
+      return throwError(new HttpErrorResponse({
+        error: `Product with id ${productId} not in basket!`
+      }))
+    }
     return of(null)
       .pipe(
         randomDelay(10, 100),
         tap(() => {
           this.localStorageService.setBasket({
-            products: this.localStorageService.getBasket().products
+            products: basket.products
               .filter(p => p.id === productId)
           })
         }),
