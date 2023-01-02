@@ -1,10 +1,10 @@
 import {Component} from '@angular/core';
 import {Store} from '@ngrx/store';
-import {LocalStorageService} from './services/local-storage.service';
+import {AppConfigActions} from './state/actions/app-config-actions';
 import {BasketActions} from './state/actions/basket-actions';
-import {ProductActions} from './state/actions/products-actions';
+import {WalletActions} from './state/actions/wallet-actions';
 import {AppState} from './state/models/app-state';
-import {BasketSelectors} from './state/selectors/basket-selectors';
+import {AppConfigSelectors} from './state/selectors/app-config-selectors';
 
 @Component({
   selector: 'app-root',
@@ -13,22 +13,17 @@ import {BasketSelectors} from './state/selectors/basket-selectors';
 })
 export class AppComponent {
 
-  title = 'ultra-marketplace';
-  basketProducts$ = this.store.select(BasketSelectors.products);
+  appConfig$ = this.store.select(AppConfigSelectors.appConfig);
 
   constructor(
-    private readonly localStorageService: LocalStorageService,
     private readonly store: Store<AppState>,
   ) {
 
-    this.store.dispatch(ProductActions.LOAD_INIT({
-      request: {
-        pageIndex: 0,
-        pageSize: 5,
-      }
-    }))
+    this.store.dispatch(AppConfigActions.LOAD_INIT());
 
-    this.store.dispatch(BasketActions.LOAD_INIT())
+    this.store.dispatch(BasketActions.LOAD_INIT());
+
+    this.store.dispatch(WalletActions.LOAD_INIT());
 
     this.store.select(state => state).subscribe(console.log)
   }

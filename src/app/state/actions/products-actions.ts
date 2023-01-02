@@ -15,4 +15,7 @@ export const ProductActions = {
     '[Products] Load failure',
     props<{ error: any }>()
   ),
+  LOAD_MORE: createAction(
+    '[Products] Load more'
+  ),
 }

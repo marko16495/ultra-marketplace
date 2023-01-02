@@ -1,3 +1,14 @@
-<app-header [basketProducts]="basketProducts" [wallet]="wallet"></app-header>
+<div class="d-flex flex-column h-100">
 
-<ng-content></ng-content>
+  <app-header
+    [basketProducts]="basketProducts$ | async"
+    [walletBalance]="walletBalance$ | async"
+    [currency]="(appConfig$ | async)?.currency">
+  </app-header>
+
+  <div class="flex-1 overflow-auto w-100">
+    <div class="m-auto py-4" style="max-width: 1280px;">
+      <ng-content></ng-content>
+    </div>
+  </div>
+</div>

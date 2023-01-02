@@ -12,8 +12,10 @@ import {AppComponent} from './app.component';
 import {StoreModule} from '@ngrx/store';
 import {HeaderModule} from './header/header.module';
 import {LayoutModule} from './layout/layout.module';
+import {AppConfigEffects} from './state/effects/app-config-effects';
 import {BasketEffects} from './state/effects/basket-effects';
 import {ProductEffects} from './state/effects/product-effects';
+import {WalletEffects} from './state/effects/wallet-effects';
 import {reducers, metaReducers} from './state/reducers';
 import {EffectsModule} from '@ngrx/effects';
 
@@ -35,8 +37,10 @@ export function createTranslateLoader(http: HttpClient) {
     }),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
     EffectsModule.forRoot([
+      AppConfigEffects,
       ProductEffects,
       BasketEffects,
+      WalletEffects,
     ]),
 
     TranslateModule.forRoot({

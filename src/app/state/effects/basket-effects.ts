@@ -15,7 +15,7 @@ export class BasketEffects {
     private readonly basketDataService: BasketDataService,
   ) { }
 
-  loadBasket = createEffect(() =>
+  loadBasket$ = createEffect(() =>
     this.actions$.pipe(
       ofType(BasketActions.LOAD_INIT),
       switchMap(() => this.basketDataService.getBasket()),
@@ -24,7 +24,7 @@ export class BasketEffects {
     )
   )
 
-  addToBasket = createEffect(() =>
+  addToBasket$ = createEffect(() =>
     this.actions$.pipe(
       ofType(BasketActions.ADD_PRODUCT_INIT),
       switchMap((action) => this.basketDataService.addProduct(action.productId)
@@ -42,7 +42,7 @@ export class BasketEffects {
     )
   )
 
-  removeFromBasket = createEffect(() =>
+  removeFromBasket$ = createEffect(() =>
     this.actions$.pipe(
       ofType(BasketActions.REMOVE_PRODUCT_INIT),
       switchMap((action) => this.basketDataService.removeProduct(action.productId)

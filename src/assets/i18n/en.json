@@ -1,4 +1,7 @@
 {
   "APP_TITLE": "Ultra Marketplace",
-  "BASKET": "Basket"
+  "BASKET": "Basket",
+  "ADD_TO_BASKET": "Add to basket",
+  "REMOVE_FROM_BASKET": "Remove from basket",
+  "LOAD_MORE_PRODUCTS": "Load more products"
 }

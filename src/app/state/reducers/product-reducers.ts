@@ -13,11 +13,13 @@ export const productReducer = createReducer(
   on(ProductActions.LOAD_INIT, (state, args) => {
     return {
       ...state,
+      request: args.request,
       loading: true
     }
   }),
   on(ProductActions.LOAD_SUCCESS, (state, args) => {
     return {
+      ...state,
       products: [...state.products, ...args.products.data],
       totalElements: args.products.totalElements,
       loading: false
@@ -29,5 +31,5 @@ export const productReducer = createReducer(
       loading: false,
       error: args.error
     }
-  })
+  }),
 )

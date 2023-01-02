@@ -1,0 +1,42 @@
+<div
+  class="px-2 pt-2 pb-2 border bg-light text-center"
+  [class.border-primary]="productWithBasketInfo.inBasket"
+  [class.border-light]="!productWithBasketInfo.inBasket">
+
+  <img
+    [src]="productWithBasketInfo.product.img"
+    [alt]="productWithBasketInfo.product.name"
+    class="mb-2 w-100 app-product--image">
+
+  <div data-test="product-name" class="fw-bold">
+    {{productWithBasketInfo.product.name}}
+  </div>
+
+  <div data-test="product-price" class="mb-2">
+    {{productWithBasketInfo.product.price | currency: currency: 'symbol': '0.0-2'}}
+  </div>
+
+  <button
+    *ngIf="!productWithBasketInfo.inBasket; else removeProductButton"
+    class="btn btn-outline-primary rounded"
+    data-test="add-to-basket-button"
+    [disabled]="productWithBasketInfo.dirty"
+    (click)="addToBasket.emit(productWithBasketInfo)">
+    <i *ngIf="!productWithBasketInfo.dirty" class="bi bi-cart-plus"></i>
+    <span *ngIf="productWithBasketInfo.dirty" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+    {{'ADD_TO_BASKET' | translate}}
+  </button>
+
+  <ng-template #removeProductButton>
+    <button
+      class="btn btn-outline-danger rounded"
+      data-test="remove-from-basket-button"
+      [disabled]="productWithBasketInfo.dirty"
+      (click)="removeFromBasket.emit(productWithBasketInfo)">
+      <i *ngIf="!productWithBasketInfo.dirty" class="bi bi-cart-minus"></i>
+      <span *ngIf="productWithBasketInfo.dirty" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+      {{'REMOVE_FROM_BASKET' | translate}}
+    </button>
+  </ng-template>
+
+</div>

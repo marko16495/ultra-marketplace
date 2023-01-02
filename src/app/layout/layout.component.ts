@@ -1,6 +1,9 @@
-import {Component, Input, ChangeDetectionStrategy} from '@angular/core';
-import {Product} from '../models/product';
-import {Wallet} from '../models/wallet';
+import {Component, ChangeDetectionStrategy} from '@angular/core';
+import {Store} from '@ngrx/store';
+import {AppState} from '../state/models/app-state';
+import {AppConfigSelectors} from '../state/selectors/app-config-selectors';
+import {BasketSelectors} from '../state/selectors/basket-selectors';
+import {WalletSelectors} from '../state/selectors/wallet-selectors';
 
 @Component({
   selector: 'app-layout',
@@ -9,7 +12,10 @@ import {Wallet} from '../models/wallet';
 })
 export class LayoutComponent {
 
-  @Input() wallet?: Wallet | null;
-  @Input() basketProducts?: Product[] | null = [];
+  basketProducts$ = this.store.select(BasketSelectors.products);
+  walletBalance$ = this.store.select(WalletSelectors.balance);
+  appConfig$ = this.store.select(AppConfigSelectors.appConfig);
+
+  constructor(private readonly store: Store<AppState>) { }
 
 }

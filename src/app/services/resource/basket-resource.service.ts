@@ -13,7 +13,7 @@ export class BasketResourceService {
   constructor(private readonly localStorageService: LocalStorageService) { }
 
   getBasket(): Observable<BasketSerialized> {
-    return of(this.localStorageService.getBasket()).pipe(randomDelay(10, 100));
+    return of(this.localStorageService.getBasket()).pipe(randomDelay(200, 300));
   }
 
   addProduct(productId: number): Observable<BasketSerialized> {
@@ -26,7 +26,7 @@ export class BasketResourceService {
     }
     return of(null)
       .pipe(
-        randomDelay(10, 100),
+        randomDelay(200, 300),
         tap(() => {
           this.localStorageService.setBasket({
             products: [
@@ -48,11 +48,11 @@ export class BasketResourceService {
     }
     return of(null)
       .pipe(
-        randomDelay(10, 100),
+        randomDelay(100, 200),
         tap(() => {
           this.localStorageService.setBasket({
             products: basket.products
-              .filter(p => p.id === productId)
+              .filter(p => p.id !== productId)
           })
         }),
         map(() => this.localStorageService.getBasket())

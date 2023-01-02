@@ -1,4 +1,4 @@
-<app-layout [basketProducts]="basketProducts$ | async">
+<app-layout *ngIf="appConfig$ | async" class="vw-100 vh-100 d-block">
 
   <router-outlet></router-outlet>
 
