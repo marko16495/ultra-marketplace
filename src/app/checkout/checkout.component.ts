@@ -20,6 +20,7 @@ export class CheckoutComponent {
   totalPrice$ = this.store.select(BasketSelectors.totalPrice);
   currency$ = this.store.select(AppConfigSelectors.currency);
   inProgress$ = this.store.select(CheckoutSelectors.inProgress);
+  productsCount$ = this.store.select(BasketSelectors.productsCount);
 
   checkoutComplete$ = this.actions$.pipe(
     ofType(CheckoutActions.CHECKOUT_SUCCESS),

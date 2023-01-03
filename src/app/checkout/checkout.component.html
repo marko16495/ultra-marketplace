@@ -2,12 +2,14 @@
 
   <div class="m-auto py-4 px-3 app-checkout--container">
 
-    <app-checkout-form
-      *ngIf="!(checkoutComplete$ | async); else checkoutCompleteTemplate"
-      [totalPrice]="totalPrice$ | async"
-      [currency]="currency$ | async"
-      (checkout)="checkout($event)">
-    </app-checkout-form>
+    <ng-container *ngIf="productsCount$ | async; else emptyBasketTemplate">
+      <app-checkout-form
+        *ngIf="!(checkoutComplete$ | async); else checkoutCompleteTemplate"
+        [totalPrice]="totalPrice$ | async"
+        [currency]="currency$ | async"
+        (checkout)="checkout($event)">
+      </app-checkout-form>
+    </ng-container>
 
     <ng-template #checkoutCompleteTemplate>
       <div class="text-center px-3 py-5">
@@ -18,6 +20,13 @@
           routerLink="/">
           {{'CHECKOUT_FORM.BUY_MORE' | translate}}
         </button>
+      </div>
+    </ng-template>
+
+    <ng-template #emptyBasketTemplate>
+      <div class="text-center p-1 p-sm-5" data-test="basket-empty">
+        <i class="bi bi-cart fs-1"></i>
+        <div class="fs-3">{{'BASKET_EMPTY' | translate}}</div>
       </div>
     </ng-template>
 
