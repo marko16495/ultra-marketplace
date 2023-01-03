@@ -1,4 +1,4 @@
-import {Component, ChangeDetectionStrategy} from '@angular/core';
+import {Component, ChangeDetectionStrategy, HostBinding} from '@angular/core';
 import {Store} from '@ngrx/store';
 import {AppState} from '../state/models/app-state';
 import {AppConfigSelectors} from '../state/selectors/app-config-selectors';
@@ -12,9 +12,11 @@ import {WalletSelectors} from '../state/selectors/wallet-selectors';
 })
 export class LayoutComponent {
 
-  basketProducts$ = this.store.select(BasketSelectors.products);
+  basketProductsCount$ = this.store.select(BasketSelectors.productsCount);
   walletBalance$ = this.store.select(WalletSelectors.balance);
-  appConfig$ = this.store.select(AppConfigSelectors.appConfig);
+  currency$ = this.store.select(AppConfigSelectors.currency);
+
+  @HostBinding('class') private cssClasses = 'vw-100 vh-100 d-block';
 
   constructor(private readonly store: Store<AppState>) { }
 

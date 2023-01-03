@@ -18,4 +18,7 @@ export const ProductActions = {
   LOAD_MORE: createAction(
     '[Products] Load more'
   ),
+  CLEAR: createAction(
+    '[Products] Clear'
+  )
 }

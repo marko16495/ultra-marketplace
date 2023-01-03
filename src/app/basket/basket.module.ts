@@ -2,20 +2,20 @@ import {CommonModule} from '@angular/common';
 import {NgModule} from '@angular/core';
 import {TranslateModule} from '@ngx-translate/core';
 import {LayoutModule} from '../layout/layout.module';
-import {HomeRoutingModule} from './home-routing.module';
-import {HomeComponent} from './home.component';
-import {ProductComponent} from './product/product.component';
+import {BasketRoutingModule} from './basket-routing.module';
+import { BasketComponent } from './basket.component';
+import { BasketProductComponent } from './basket-product/basket-product.component';
 
 @NgModule({
   imports: [
     CommonModule,
-    HomeRoutingModule,
+    BasketRoutingModule,
     TranslateModule,
     LayoutModule,
   ],
   declarations: [
-    HomeComponent,
-    ProductComponent
+    BasketComponent,
+    BasketProductComponent
   ]
 })
-export class HomeModule { }
+export class BasketModule { }

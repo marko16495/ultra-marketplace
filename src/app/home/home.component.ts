@@ -1,4 +1,4 @@
-import {Component, OnInit, ChangeDetectionStrategy} from '@angular/core';
+import {Component, OnInit, ChangeDetectionStrategy, OnDestroy} from '@angular/core';
 import {Store} from '@ngrx/store';
 import {GetProductsRequest} from '../models/get-products-request';
 import {Product} from '../models/product';
@@ -11,9 +11,10 @@ import {ProductSelectors} from '../state/selectors/product-selectors';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
+  styleUrls: ['./home.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnDestroy {
 
   currency$ = this.store.select(AppConfigSelectors.currency);
   productsWithBasketInfo$ = this.store.select(ProductSelectors.productsWithBasketInfo);
@@ -29,6 +30,10 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.store.dispatch(ProductActions.LOAD_INIT({request: this.initialRequest}));
+  }
+
+  ngOnDestroy() {
+    this.store.dispatch(ProductActions.CLEAR());
   }
 
   loadMore() {

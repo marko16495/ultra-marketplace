@@ -2,22 +2,20 @@ import {CommonModule} from '@angular/common';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
+import {EffectsModule} from '@ngrx/effects';
+import {StoreModule} from '@ngrx/store';
+import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {environment} from '../environments/environment';
-import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {StoreModule} from '@ngrx/store';
-import {HeaderModule} from './header/header.module';
-import {LayoutModule} from './layout/layout.module';
 import {AppConfigEffects} from './state/effects/app-config-effects';
 import {BasketEffects} from './state/effects/basket-effects';
 import {ProductEffects} from './state/effects/product-effects';
 import {WalletEffects} from './state/effects/wallet-effects';
 import {reducers, metaReducers} from './state/reducers';
-import {EffectsModule} from '@ngrx/effects';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -52,8 +50,6 @@ export function createTranslateLoader(http: HttpClient) {
       }
     }),
     CommonModule,
-    HeaderModule,
-    LayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

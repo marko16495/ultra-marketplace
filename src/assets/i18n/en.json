@@ -3,5 +3,8 @@
   "BASKET": "Basket",
   "ADD_TO_BASKET": "Add to basket",
   "REMOVE_FROM_BASKET": "Remove from basket",
-  "LOAD_MORE_PRODUCTS": "Load more products"
+  "LOAD_MORE_PRODUCTS": "Load more products",
+  "TOTAL_PRICE": "Total price",
+  "CHECKOUT": "Checkout",
+  "NOT_ENOUGH_FUNDS": "You don't have enough funds in your wallet"
 }

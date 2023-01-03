@@ -1,21 +1,21 @@
-<nav class="navbar bg-body-tertiary">
+<nav class="navbar navbar-light bg-light px-0 px-md-2">
   <div class="container-fluid">
-    <h1 routerLink="/">
+    <a routerLink="/" class="text-decoration-none text-dark fs-2">
       {{'APP_TITLE' | translate}}
-    </h1>
+    </a>
     <div class="d-flex">
       <button class="btn btn-light bg-transparent me-3" type="button">
         <i class="bi bi-wallet-fill me-2"></i>
-        <span>{{walletBalance | currency: currency: 'symbol':'0.0-2'}}</span>
+        <span>{{walletBalance | currency: currency!: 'symbol':'0.0-2'}}</span>
       </button>
-      <button class="btn btn-light bg-transparent" type="button">
-        <i *ngIf="basketProducts?.length; else emptyBasketIcon" class="bi bi-cart-fill me-2"></i>
+      <button class="btn btn-light bg-transparent" type="button" routerLink="/basket">
+        <i *ngIf="basketProductsCount; else emptyBasketIcon" class="bi bi-cart-fill me-2"></i>
         <ng-template #emptyBasketIcon>
           <i class="bi bi-cart me-2"></i>
         </ng-template>
         <span>
           {{'BASKET' | translate}}
-          ({{basketProducts?.length ?? 0}})
+          ({{basketProductsCount}})
         </span>
       </button>
     </div>

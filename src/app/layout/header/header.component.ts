@@ -1,5 +1,4 @@
 import {Component, Input, ChangeDetectionStrategy} from '@angular/core';
-import {Product} from '../models/product';
 
 @Component({
   selector: 'app-header',
@@ -9,7 +8,7 @@ import {Product} from '../models/product';
 export class HeaderComponent {
 
   @Input() walletBalance?: number | null;
-  @Input() basketProducts?: Product[] | null = [];
-  @Input() currency?: string;
+  @Input() basketProductsCount?: number | null;
+  @Input() currency?: string | null;
 
 }

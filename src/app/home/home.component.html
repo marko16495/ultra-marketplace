@@ -1,22 +1,30 @@
-<div *ngIf="currency$ | async as currency" class="w-100 row gx-4 gy-5 ms-0">
+<app-layout>
 
-  <app-product
-    class="col-12 col-sm-6 col-md-4 col-lg-3"
-    *ngFor="let productWithBasketInfo of productsWithBasketInfo$ | async"
-    [productWithBasketInfo]="productWithBasketInfo"
-    [currency]="currency"
-    (addToBasket)="addProductToBasket($event.product)"
-    (removeFromBasket)="removeProductFromBasket($event.product)">
-  </app-product>
+  <div class="m-auto py-4 app-home--container">
 
-</div>
+    <div *ngIf="currency$ | async as currency" class="w-100 row gx-4 gy-5 ms-0">
 
-<div class="w-100 flex px-3 py-5 text-center">
-  <button
-    *ngIf="hasMore$ | async"
-    [disabled]="loading$ | async"
-    class="btn btn-outline-secondary"
-    (click)="loadMore()">
-    {{'LOAD_MORE_PRODUCTS' | translate}}
-  </button>
-</div>
+      <app-product
+        class="col-12 col-sm-6 col-md-4 col-lg-3"
+        *ngFor="let productWithBasketInfo of productsWithBasketInfo$ | async"
+        [productWithBasketInfo]="productWithBasketInfo"
+        [currency]="currency"
+        (addToBasket)="addProductToBasket($event.product)"
+        (removeFromBasket)="removeProductFromBasket($event.product)">
+      </app-product>
+
+    </div>
+
+    <div class="w-100 flex px-3 py-5 text-center">
+      <button
+        *ngIf="hasMore$ | async"
+        [disabled]="loading$ | async"
+        class="btn btn-outline-secondary"
+        (click)="loadMore()">
+        {{'LOAD_MORE_PRODUCTS' | translate}}
+      </button>
+    </div>
+
+  </div>
+
+</app-layout>

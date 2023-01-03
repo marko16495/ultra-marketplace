@@ -32,4 +32,11 @@ export const productReducer = createReducer(
       error: args.error
     }
   }),
+  on(ProductActions.CLEAR, () => {
+    return {
+      products: [],
+      totalElements: 0,
+      loading: false
+    }
+  }),
 )
