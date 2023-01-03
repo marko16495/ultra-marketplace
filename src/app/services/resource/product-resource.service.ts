@@ -24,7 +24,7 @@ export class ProductResourceService {
     return of({
       data: data,
       totalElements: filteredProducts.length
-    }).pipe(randomDelay(200, 500));
+    }).pipe(randomDelay(200, 400));
   }
 
 }

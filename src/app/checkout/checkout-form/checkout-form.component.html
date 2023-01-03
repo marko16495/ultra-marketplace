@@ -1,0 +1,89 @@
+<form [formGroup]="form">
+
+  <div class="row g-3 mb-3">
+
+    <div class="col-12 col-sm-6">
+      <label for="firstName" class="form-label">{{'CHECKOUT_FORM.FIRST_NAME' | translate}} *</label>
+      <input formControlName="firstName" class="form-control" id="firstName" aria-describedby="firstNameHelp">
+      <div
+        *ngIf="form.controls.firstName.invalid && form.controls.firstName.touched"
+        id="firstNameHelp"
+        class="form-text text-danger">
+        {{'CHECKOUT_FORM.THIS_FIELD_IS_REQUIRED' | translate}}
+      </div>
+    </div>
+
+    <div class="col-12 col-sm-6">
+      <label for="lastName" class="form-label">{{'CHECKOUT_FORM.LAST_NAME' | translate}} *</label>
+      <input formControlName="lastName" class="form-control" id="lastName" aria-describedby="lastNameHelp">
+      <div
+        *ngIf="form.controls.lastName.invalid && form.controls.lastName.touched"
+        id="lastNameHelp"
+        class="form-text text-danger">
+        {{'CHECKOUT_FORM.THIS_FIELD_IS_REQUIRED' | translate}}
+      </div>
+    </div>
+
+  </div>
+
+  <div class="mb-3">
+    <label for="street" class="form-label">{{'CHECKOUT_FORM.STREET' | translate}} *</label>
+    <input formControlName="street" class="form-control" id="street" aria-describedby="streetHelp">
+    <div
+      *ngIf="form.controls.street.invalid && form.controls.street.touched"
+      id="streetHelp"
+      class="form-text text-danger">
+      {{'CHECKOUT_FORM.THIS_FIELD_IS_REQUIRED' | translate}}
+    </div>
+  </div>
+
+  <div class="row g-3 mb-3">
+    <div class="col-12 col-sm-6">
+      <label for="city" class="form-label">{{'CHECKOUT_FORM.CITY' | translate}} *</label>
+      <input formControlName="city" class="form-control" id="city" aria-describedby="cityHelp">
+      <div
+        *ngIf="form.controls.city.invalid && form.controls.city.touched"
+        id="cityHelp"
+        class="form-text text-danger">
+        {{'CHECKOUT_FORM.THIS_FIELD_IS_REQUIRED' | translate}}
+      </div>
+    </div>
+
+    <div class="col-12 col-sm-6">
+      <label for="state" class="form-label">{{'CHECKOUT_FORM.STATE' | translate}} *</label>
+      <input formControlName="state" class="form-control" id="state" aria-describedby="stateHelp">
+      <div
+        *ngIf="form.controls.state.invalid && form.controls.state.touched"
+        id="stateHelp"
+        class="form-text text-danger">
+        {{'CHECKOUT_FORM.THIS_FIELD_IS_REQUIRED' | translate}}
+      </div>
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label for="email" class="form-label">{{'CHECKOUT_FORM.EMAIL' | translate}} *</label>
+    <input formControlName="email" type="email" class="form-control" id="email" aria-describedby="emailHelp">
+    <div
+      *ngIf="form.controls.email.invalid && form.controls.email.touched"
+      id="emailHelp"
+      class="form-text text-danger">
+      <ng-container *ngIf="form.controls.email.errors!['required']">
+        {{'CHECKOUT_FORM.THIS_FIELD_IS_REQUIRED' | translate}}
+      </ng-container>
+      <ng-container *ngIf="form.controls.email.errors!['email']">
+        {{'CHECKOUT_FORM.INVALID_EMAIL' | translate}}
+      </ng-container>
+    </div>
+  </div>
+
+  <div class="my-4" data-test="total-price">
+    {{'TOTAL' | translate}}:
+    {{totalPrice | currency: currency!: 'symbol': '0.0-2'}}
+  </div>
+
+  <button class="btn btn-primary" [disabled]="form.invalid" type="button" (click)="checkout.emit(form.value)">
+    {{'CHECKOUT_FORM.PAY' | translate}}
+  </button>
+
+</form>

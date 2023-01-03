@@ -1,7 +1,7 @@
 <div
-  class="px-2 pt-2 pb-2 border bg-light text-center"
-  [class.border-primary]="productWithBasketInfo.inBasket"
-  [class.border-light]="!productWithBasketInfo.inBasket">
+  class="px-2 pt-2 pb-2 border bg-opacity-10 text-center"
+  [class.bg-primary]="productWithBasketInfo.inBasket"
+  [class.bg-light]="!productWithBasketInfo.inBasket">
 
   <img
     [src]="productWithBasketInfo.product.img"
@@ -18,7 +18,7 @@
 
   <button
     *ngIf="!productWithBasketInfo.inBasket; else removeProductButton"
-    class="btn btn-outline-primary rounded"
+    class="btn btn-outline-secondary rounded"
     data-test="add-to-basket-button"
     [disabled]="productWithBasketInfo.dirty"
     (click)="addToBasket.emit(productWithBasketInfo)">
@@ -29,7 +29,7 @@
 
   <ng-template #removeProductButton>
     <button
-      class="btn btn-outline-danger rounded"
+      class="btn btn-outline-primary rounded"
       data-test="remove-from-basket-button"
       [disabled]="productWithBasketInfo.dirty"
       (click)="removeFromBasket.emit(productWithBasketInfo)">

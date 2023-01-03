@@ -16,9 +16,6 @@ export class CheckoutResourceService {
     const basket = this.localStorageService.getBasket();
     const wallet = this.localStorageService.getWallet();
     const totalPrice = basket.products.reduce((acc, p) => acc + p.price, 0);
-    if (totalPrice > wallet.balance) {
-      // todo
-    }
     // remove products from marketplace
     const products = this.localStorageService.getProducts()
       .filter(product => !basket.products.some(p => p.id === product.id));
@@ -50,7 +47,7 @@ export class CheckoutResourceService {
       status: HttpStatusCode.Ok
     })
     return of(response)
-      .pipe(randomDelay(100, 200))
+      .pipe(randomDelay(1500, 2000))
   }
 
 }

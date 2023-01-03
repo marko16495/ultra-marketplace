@@ -6,5 +6,20 @@
   "LOAD_MORE_PRODUCTS": "Load more products",
   "TOTAL_PRICE": "Total price",
   "CHECKOUT": "Checkout",
-  "NOT_ENOUGH_FUNDS": "You don't have enough funds in your wallet"
+  "NOT_ENOUGH_FUNDS": "You don't have enough funds in your wallet",
+  "BASKET_EMPTY": "Basket is empty",
+  "TOTAL": "Total",
+  "CHECKOUT_FORM": {
+    "FIRST_NAME": "First name",
+    "LAST_NAME": "Last name",
+    "STREET": "Street",
+    "CITY": "City",
+    "STATE": "State",
+    "EMAIL": "E-mail",
+    "PAY": "Pay",
+    "THIS_FIELD_IS_REQUIRED": "This field is required",
+    "INVALID_EMAIL": "Invalid e-mail",
+    "THANK_YOU_FOR_YOUR_PURCHASE": "Thank you for your purchase",
+    "BUY_MORE": "Buy more"
+  }
 }

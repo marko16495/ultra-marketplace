@@ -1,0 +1,23 @@
+<app-layout>
+
+  <div class="m-auto py-4 px-3 app-checkout--container">
+
+    <app-checkout-form
+      *ngIf="!(checkoutComplete$ | async); else checkoutCompleteTemplate"
+      [totalPrice]="totalPrice$ | async"
+      [currency]="currency$ | async"
+      (checkout)="checkout($event)">
+    </app-checkout-form>
+
+    <ng-template #checkoutCompleteTemplate>
+      <div class="text-center px-3 py-5">
+        <div class="fs-2 mb-4">{{'CHECKOUT_FORM.THANK_YOU_FOR_YOUR_PURCHASE' | translate}}</div>
+        <button class="btn btn-outline-primary" routerLink="/">{{'CHECKOUT_FORM.BUY_MORE' | translate}}</button>
+      </div>
+    </ng-template>
+
+  </div>
+
+  <app-loader *ngIf="inProgress$ | async"></app-loader>
+
+</app-layout>

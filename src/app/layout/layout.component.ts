@@ -16,7 +16,7 @@ export class LayoutComponent {
   walletBalance$ = this.store.select(WalletSelectors.balance);
   currency$ = this.store.select(AppConfigSelectors.currency);
 
-  @HostBinding('class') private cssClasses = 'vw-100 vh-100 d-block';
+  @HostBinding('class') private cssClass = 'vw-100 vh-100 d-block';
 
   constructor(private readonly store: Store<AppState>) { }
 

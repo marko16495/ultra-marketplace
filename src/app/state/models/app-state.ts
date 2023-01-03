@@ -1,5 +1,6 @@
 import {AppConfigState} from './app-config-state';
 import {BasketState} from './basket-state';
+import {CheckoutState} from './checkout-state';
 import {ProductsState} from './products-state';
 import {WalletState} from './wallet-state';
 
@@ -8,4 +9,5 @@ export interface AppState {
   products: ProductsState;
   basket: BasketState;
   wallet: WalletState;
+  checkout: CheckoutState;
 }

@@ -13,6 +13,7 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {AppConfigEffects} from './state/effects/app-config-effects';
 import {BasketEffects} from './state/effects/basket-effects';
+import {CheckoutEffects} from './state/effects/checkout-effects';
 import {ProductEffects} from './state/effects/product-effects';
 import {WalletEffects} from './state/effects/wallet-effects';
 import {reducers, metaReducers} from './state/reducers';
@@ -39,6 +40,7 @@ export function createTranslateLoader(http: HttpClient) {
       ProductEffects,
       BasketEffects,
       WalletEffects,
+      CheckoutEffects,
     ]),
 
     TranslateModule.forRoot({

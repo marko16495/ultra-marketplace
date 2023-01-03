@@ -13,7 +13,7 @@ export class AppConfigResourceService {
 
   getAppConfig(): Observable<AppConfigSerialized> {
     return of(this.localStorageService.getAppConfig())
-      .pipe(randomDelay(500, 1000))
+      .pipe(randomDelay(200, 300))
   }
 
 }

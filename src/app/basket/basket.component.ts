@@ -15,6 +15,7 @@ import {BasketSelectors} from '../state/selectors/basket-selectors';
 export class BasketComponent {
 
   products$ = this.store.select(BasketSelectors.productsExtended);
+  productsCount$ = this.store.select(BasketSelectors.productsCount);
   totalPrice$ = this.store.select(BasketSelectors.totalPrice);
   currency$ = this.store.select(AppConfigSelectors.currency);
   balanceSufficient$ = this.store.select(BasketSelectors.balanceSufficient);
