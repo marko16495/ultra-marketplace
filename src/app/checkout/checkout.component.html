@@ -2,9 +2,9 @@
 
   <div class="m-auto py-4 px-3 app-checkout--container">
 
-    <ng-container *ngIf="productsCount$ | async; else emptyBasketTemplate">
+    <ng-container *ngIf="!(checkoutComplete$ | async); else checkoutCompleteTemplate">
       <app-checkout-form
-        *ngIf="!(checkoutComplete$ | async); else checkoutCompleteTemplate"
+        *ngIf="productsCount$ | async; else emptyBasketTemplate"
         [totalPrice]="totalPrice$ | async"
         [currency]="currency$ | async"
         (checkout)="checkout($event)">
