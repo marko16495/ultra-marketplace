@@ -1,7 +1,7 @@
 import {Component, OnInit, ChangeDetectionStrategy, OnDestroy} from '@angular/core';
 import {Store} from '@ngrx/store';
-import {GetProductsRequest} from '../models/get-products-request';
-import {Product} from '../models/product';
+import {GetProductsRequest} from '../models/public/get-products-request';
+import {Product} from '../models/public/product';
 import {BasketActions} from '../state/actions/basket-actions';
 import {ProductActions} from '../state/actions/products-actions';
 import {AppState} from '../state/models/app-state';

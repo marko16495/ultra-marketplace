@@ -1,8 +1,8 @@
 import {Injectable} from '@angular/core';
 import {map, Observable} from 'rxjs';
-import {Products} from '../../models/products';
+import {Products} from '../../models/public/products';
 import {deserializeProducts} from '../../models/mappers/deserialize-products';
-import {GetProductsRequest} from '../../models/get-products-request';
+import {GetProductsRequest} from '../../models/public/get-products-request';
 import {ProductResourceService} from '../resource/product-resource.service';
 
 @Injectable({

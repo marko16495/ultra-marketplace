@@ -1,4 +1,4 @@
-import {Orders} from '../orders';
+import {Orders} from '../public/orders';
 import {OrdersSerialized} from '../serialized/orders-serialized';
 import {deserializeOrder} from './deserialize-order';
 

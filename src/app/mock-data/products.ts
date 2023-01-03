@@ -1,6 +1,8 @@
 import {InjectionToken} from '@angular/core';
 import {ProductSerialized} from '../models/serialized/product-serialized';
 
+// todo: upload images to imgur
+
 export const INITIAL_PRODUCTS = new InjectionToken<ProductSerialized[]>('INITIAL_PRODUCTS', {
   providedIn: 'root',
   factory: () => ([

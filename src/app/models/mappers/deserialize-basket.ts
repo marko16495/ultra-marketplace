@@ -1,4 +1,4 @@
-import {Basket} from '../basket';
+import {Basket} from '../public/basket';
 import {BasketSerialized} from '../serialized/basket-serialized';
 import {deserializeProduct} from './deserialize-product';
 

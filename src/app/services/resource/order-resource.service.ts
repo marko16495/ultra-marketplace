@@ -1,8 +1,8 @@
 import {Injectable} from '@angular/core';
 import {Observable, of} from 'rxjs';
-import {GetOrdersRequest} from '../../models/get-orders-request';
+import {GetOrdersRequest} from '../../models/public/get-orders-request';
 import {OrdersSerialized} from '../../models/serialized/orders-serialized';
-import {randomDelay} from '../../operators/random-delay.operator';
+import {randomDelay} from '../../shared/operators/random-delay.operator';
 import {LocalStorageService} from '../local-storage.service';
 
 @Injectable({

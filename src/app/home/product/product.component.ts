@@ -1,5 +1,5 @@
 import {Component, Input, Output, EventEmitter, ChangeDetectionStrategy} from '@angular/core';
-import {ProductWithBasketInfo} from '../../models/product-with-basket-info';
+import {ProductWithBasketInfo} from '../../models/public/product-with-basket-info';
 
 @Component({
   selector: 'app-product',

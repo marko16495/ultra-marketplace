@@ -1,3 +1,3 @@
 export interface AppConfigSerialized {
-  currency: 'USD'; // todo
+  currency: string;
 }

@@ -1,6 +1,6 @@
 import {Component, ChangeDetectionStrategy} from '@angular/core';
 import {Store} from '@ngrx/store';
-import {Product} from '../models/product';
+import {Product} from '../models/public/product';
 import {BasketActions} from '../state/actions/basket-actions';
 import {AppState} from '../state/models/app-state';
 import {AppConfigSelectors} from '../state/selectors/app-config-selectors';

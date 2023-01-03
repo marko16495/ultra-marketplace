@@ -1,5 +1,5 @@
-import {GetProductsRequest} from '../../models/get-products-request';
-import {Product} from '../../models/product';
+import {GetProductsRequest} from '../../models/public/get-products-request';
+import {Product} from '../../models/public/product';
 
 export interface ProductsState {
   request?: GetProductsRequest;

@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Observable, map} from 'rxjs';
-import {Basket} from '../../models/basket';
+import {Basket} from '../../models/public/basket';
 import {deserializeBasket} from '../../models/mappers/deserialize-basket';
 import {BasketResourceService} from '../resource/basket-resource.service';
 

@@ -14,8 +14,7 @@ export class CheckoutEffects {
   constructor(
     private readonly actions$: Actions,
     private readonly checkoutDataService: CheckoutDataService,
-  ) {
-  }
+  ) { }
 
   checkout$ = createEffect(() =>
     this.actions$.pipe(

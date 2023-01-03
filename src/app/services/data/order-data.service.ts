@@ -1,8 +1,8 @@
 import {Injectable} from '@angular/core';
 import {map, Observable} from 'rxjs';
-import {GetProductsRequest} from '../../models/get-products-request';
+import {GetProductsRequest} from '../../models/public/get-products-request';
 import {deserializeOrders} from '../../models/mappers/deserialize-orders';
-import {Orders} from '../../models/orders';
+import {Orders} from '../../models/public/orders';
 import {OrderResourceService} from '../resource/order-resource.service';
 
 @Injectable({

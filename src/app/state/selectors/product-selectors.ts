@@ -1,4 +1,4 @@
-import {ProductWithBasketInfo} from '../../models/product-with-basket-info';
+import {ProductWithBasketInfo} from '../../models/public/product-with-basket-info';
 import {AppState} from '../models/app-state';
 
 export const ProductSelectors = {

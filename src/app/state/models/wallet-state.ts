@@ -1,4 +1,4 @@
-import {Wallet} from '../../models/wallet';
+import {Wallet} from '../../models/public/wallet';
 
 export interface WalletState {
   wallet?: Wallet;

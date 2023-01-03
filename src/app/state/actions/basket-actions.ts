@@ -1,5 +1,5 @@
 import {createAction, props} from '@ngrx/store';
-import {Basket} from '../../models/basket';
+import {Basket} from '../../models/public/basket';
 
 export const BasketActions = {
   LOAD_INIT: createAction(

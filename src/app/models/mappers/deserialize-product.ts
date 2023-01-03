@@ -1,4 +1,4 @@
-import {Product} from '../product';
+import {Product} from '../public/product';
 import {ProductSerialized} from '../serialized/product-serialized';
 
 export function deserializeProduct(serialized: ProductSerialized): Product {

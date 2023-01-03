@@ -2,7 +2,7 @@ import {Component, ChangeDetectionStrategy} from '@angular/core';
 import {Actions, ofType} from '@ngrx/effects';
 import {Store} from '@ngrx/store';
 import {map} from 'rxjs';
-import {CheckoutRequest} from '../models/checkout-request';
+import {CheckoutRequest} from '../models/public/checkout-request';
 import {CheckoutActions} from '../state/actions/checkout-actions';
 import {AppState} from '../state/models/app-state';
 import {AppConfigSelectors} from '../state/selectors/app-config-selectors';

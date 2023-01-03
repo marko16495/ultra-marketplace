@@ -1,6 +1,6 @@
-import {Product} from '../../src/app/models/product';
+import {ProductSerialized} from '../../src/app/models/serialized/product-serialized';
 
-export const cyProducts: Product[] = [
+export const cyProducts: ProductSerialized[] = [
   {
     id: 1,
     name: 'Product 1',

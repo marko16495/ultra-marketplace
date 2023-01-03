@@ -1,4 +1,4 @@
-import {Products} from '../products';
+import {Products} from '../public/products';
 import {ProductsSerialized} from '../serialized/products-serialized';
 import {deserializeProduct} from './deserialize-product';
 

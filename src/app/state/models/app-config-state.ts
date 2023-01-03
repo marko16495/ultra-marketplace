@@ -1,4 +1,4 @@
-import {AppConfig} from '../../models/app-config';
+import {AppConfig} from '../../models/public/app-config';
 
 export interface AppConfigState {
   appConfig?: AppConfig;

@@ -2,7 +2,7 @@ import {HttpErrorResponse} from '@angular/common/http';
 import {Injectable} from '@angular/core';
 import {Observable, of, tap, map, throwError} from 'rxjs';
 import {BasketSerialized} from '../../models/serialized/basket-serialized';
-import {randomDelay} from '../../operators/random-delay.operator';
+import {randomDelay} from '../../shared/operators/random-delay.operator';
 import {LocalStorageService} from '../local-storage.service';
 
 @Injectable({

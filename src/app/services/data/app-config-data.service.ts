@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Observable, map} from 'rxjs';
-import {AppConfig} from '../../models/app-config';
+import {AppConfig} from '../../models/public/app-config';
 import {deserializeAppConfig} from '../../models/mappers/deserialize-app-config';
 import {AppConfigResourceService} from '../resource/app-config-resource.service';
 

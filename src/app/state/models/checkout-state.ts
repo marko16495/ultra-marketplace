@@ -1,4 +1,4 @@
-import {CheckoutRequest} from '../../models/checkout-request';
+import {CheckoutRequest} from '../../models/public/checkout-request';
 
 export interface CheckoutState {
   checkoutRequest?: CheckoutRequest;

@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Observable, map} from 'rxjs';
-import {Wallet} from '../../models/wallet';
+import {Wallet} from '../../models/public/wallet';
 import {deserializeWallet} from '../../models/mappers/deserialize-wallet';
 import {WalletResourceService} from '../resource/wallet-resource.service';
 

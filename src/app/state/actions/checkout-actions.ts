@@ -1,5 +1,5 @@
 import {createAction, props} from '@ngrx/store';
-import {CheckoutRequest} from '../../models/checkout-request';
+import {CheckoutRequest} from '../../models/public/checkout-request';
 
 export const CheckoutActions = {
   CHECKOUT_INIT: createAction(

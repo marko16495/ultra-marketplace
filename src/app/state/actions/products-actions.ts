@@ -1,6 +1,6 @@
 import {createAction, props} from '@ngrx/store';
-import {GetProductsRequest} from '../../models/get-products-request';
-import {Products} from '../../models/products';
+import {GetProductsRequest} from '../../models/public/get-products-request';
+import {Products} from '../../models/public/products';
 
 export const ProductActions = {
   LOAD_INIT: createAction(

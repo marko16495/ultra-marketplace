@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {ComponentFixture, TestBed, waitForAsync} from '@angular/core/testing';
 import {TranslateModule} from '@ngx-translate/core';
-import {Product} from '../../models/product';
+import {Product} from '../../models/public/product';
 import {BasketProductComponent} from './basket-product.component';
 
 // Wrapper component is required in order to test component with ChangeDetectionStrategy.OnPush

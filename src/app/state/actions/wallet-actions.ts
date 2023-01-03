@@ -1,5 +1,5 @@
 import {createAction, props} from '@ngrx/store';
-import {Wallet} from '../../models/wallet';
+import {Wallet} from '../../models/public/wallet';
 
 export const WalletActions = {
   LOAD_INIT: createAction(

@@ -1,4 +1,6 @@
-# UltraMarketplace
+# Ultra Marketplace
+
+**NOTE**: All data is stored in `localStorage`, i.e. it is used in place of a backend.
 
 ## Development server
 
@@ -15,3 +17,7 @@ Run `npm run test` to execute the unit tests via [Karma](https://karma-runner.gi
 ## Running Cypress end-to-end tests
 
 Run `npm run e2e`
+
+## Running inside Electron
+
+Run `npm run electron`

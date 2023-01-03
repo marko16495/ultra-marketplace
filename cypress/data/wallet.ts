@@ -1,5 +1,5 @@
-import {Wallet} from '../../src/app/models/wallet';
+import {WalletSerialized} from '../../src/app/models/serialized/wallet-serialized';
 
-export const cyWallet: Wallet = {
+export const cyWallet: WalletSerialized = {
   balance: 1000
 }

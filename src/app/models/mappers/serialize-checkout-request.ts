@@ -1,4 +1,4 @@
-import {CheckoutRequest} from '../checkout-request';
+import {CheckoutRequest} from '../public/checkout-request';
 import {CheckoutRequestSerialized} from '../serialized/checkout-request-serialized';
 
 export function serializeCheckoutRequest(request: CheckoutRequest): CheckoutRequestSerialized {

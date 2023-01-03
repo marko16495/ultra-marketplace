@@ -2,7 +2,7 @@ import {HttpResponse, HttpStatusCode} from '@angular/common/http';
 import {Injectable} from '@angular/core';
 import {of, Observable} from 'rxjs';
 import {CheckoutRequestSerialized} from '../../models/serialized/checkout-request-serialized';
-import {randomDelay} from '../../operators/random-delay.operator';
+import {randomDelay} from '../../shared/operators/random-delay.operator';
 import {LocalStorageService} from '../local-storage.service';
 
 @Injectable({

@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, ChangeDetectionStrategy} from '@angular/core';
 import {Store} from '@ngrx/store';
 import {AppConfigActions} from './state/actions/app-config-actions';
 import {BasketActions} from './state/actions/basket-actions';
@@ -9,22 +9,18 @@ import {AppConfigSelectors} from './state/selectors/app-config-selectors';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent {
 
   appConfig$ = this.store.select(AppConfigSelectors.appConfig);
 
-  constructor(
-    private readonly store: Store<AppState>,
-  ) {
-
+  constructor(private readonly store: Store<AppState>) {
+    // load application configuration
     this.store.dispatch(AppConfigActions.LOAD_INIT());
-
+    // load basket
     this.store.dispatch(BasketActions.LOAD_INIT());
-
+    // load wallet
     this.store.dispatch(WalletActions.LOAD_INIT());
-
-    this.store.select(state => state).subscribe(console.log)
   }
 }

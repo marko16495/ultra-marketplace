@@ -1,3 +1,3 @@
 export interface AppConfig {
-  currency: 'USD'; // todo
+  currency: string;
 }

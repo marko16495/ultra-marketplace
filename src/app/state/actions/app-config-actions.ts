@@ -1,5 +1,5 @@
 import {createAction, props} from '@ngrx/store';
-import {AppConfig} from '../../models/app-config';
+import {AppConfig} from '../../models/public/app-config';
 
 export const AppConfigActions = {
   LOAD_INIT: createAction(
