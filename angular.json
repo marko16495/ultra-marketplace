@@ -111,6 +111,37 @@
               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
             ]
           }
+        },
+        "cypress-run": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "devServerTarget": "ultra-marketplace:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "ultra-marketplace:serve:production"
+            }
+          }
+        },
+        "cypress-open": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "watch": true,
+            "headless": false
+          }
+        },
+        "e2e": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "devServerTarget": "ultra-marketplace:serve",
+            "watch": true,
+            "headless": false
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "ultra-marketplace:serve:production"
+            }
+          }
         }
       }
     }

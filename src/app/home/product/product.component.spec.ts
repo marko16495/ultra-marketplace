@@ -55,7 +55,7 @@ describe('ProductComponent', () => {
     }
     fixture.detectChanges();
     const de = fixture.debugElement;
-    const nameElement = de.nativeElement.querySelector('[data-test="product-name"]') as HTMLElement;
+    const nameElement = de.nativeElement.querySelector('[data-test="app-product-name"]') as HTMLElement;
     expect(nameElement.innerHTML).toContain('Test product');
   });
 
@@ -72,7 +72,7 @@ describe('ProductComponent', () => {
     }
     fixture.detectChanges();
     const de = fixture.debugElement;
-    const priceElement = de.nativeElement.querySelector('[data-test="product-price"]') as HTMLElement;
+    const priceElement = de.nativeElement.querySelector('[data-test="app-product-price"]') as HTMLElement;
     expect(priceElement.innerHTML).toContain('$100');
   });
 
@@ -107,7 +107,7 @@ describe('ProductComponent', () => {
     }
     fixture.detectChanges();
     const de = fixture.debugElement;
-    const buttonElement = de.nativeElement.querySelector('[data-test="add-to-basket-button"]') as HTMLButtonElement;
+    const buttonElement = de.nativeElement.querySelector('[data-test="app-product-add-to-basket-button"]') as HTMLButtonElement;
     expect(buttonElement).toBeTruthy();
   });
 
@@ -124,7 +124,7 @@ describe('ProductComponent', () => {
     }
     fixture.detectChanges();
     const de = fixture.debugElement;
-    const buttonElement = de.nativeElement.querySelector('[data-test="remove-from-basket-button"]') as HTMLButtonElement;
+    const buttonElement = de.nativeElement.querySelector('[data-test="app-product-remove-from-basket-button"]') as HTMLButtonElement;
     expect(buttonElement).toBeTruthy();
   });
 

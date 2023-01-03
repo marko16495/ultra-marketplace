@@ -82,7 +82,12 @@
     {{totalPrice | currency: currency!: 'symbol': '0.0-2'}}
   </div>
 
-  <button class="btn btn-primary" [disabled]="form.invalid" type="button" (click)="checkout.emit(form.value)">
+  <button
+    class="btn btn-primary"
+    [disabled]="form.invalid"
+    type="button"
+    data-test="app-checkout-form-pay"
+    (click)="checkout.emit(form.value)">
     {{'CHECKOUT_FORM.PAY' | translate}}
   </button>
 

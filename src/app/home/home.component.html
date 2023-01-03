@@ -20,6 +20,7 @@
         *ngIf="hasMore$ | async"
         [disabled]="loading$ | async"
         class="btn btn-outline-secondary"
+        data-test="app-home-load-more"
         (click)="loadMore()">
         {{'LOAD_MORE_PRODUCTS' | translate}}
       </button>

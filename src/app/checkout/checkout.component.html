@@ -12,7 +12,12 @@
     <ng-template #checkoutCompleteTemplate>
       <div class="text-center px-3 py-5">
         <div class="fs-2 mb-4">{{'CHECKOUT_FORM.THANK_YOU_FOR_YOUR_PURCHASE' | translate}}</div>
-        <button class="btn btn-outline-primary" routerLink="/">{{'CHECKOUT_FORM.BUY_MORE' | translate}}</button>
+        <button
+          class="btn btn-outline-primary"
+          data-test="app-checkout-buy-more"
+          routerLink="/">
+          {{'CHECKOUT_FORM.BUY_MORE' | translate}}
+        </button>
       </div>
     </ng-template>
 

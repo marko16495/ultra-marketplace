@@ -6,7 +6,9 @@
     <div class="d-flex flex-column flex-sm-row">
       <button class="btn btn-light bg-transparent me-3" type="button">
         <i class="bi bi-wallet-fill me-2"></i>
-        <span>{{walletBalance | currency: currency!: 'symbol':'0.0-2'}}</span>
+        <span data-test="app-header-balance">
+          {{walletBalance | currency: currency!: 'symbol':'0.0-2'}}
+        </span>
       </button>
       <button
         class="btn"
@@ -17,7 +19,7 @@
         <ng-template #emptyBasketIcon>
           <i class="bi bi-cart me-2"></i>
         </ng-template>
-        <span>
+        <span data-test="app-header-basket">
           {{'BASKET' | translate}}
           ({{basketProductsCount}})
         </span>
