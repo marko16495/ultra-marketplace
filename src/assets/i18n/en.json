@@ -8,6 +8,7 @@
   "CHECKOUT": "Checkout",
   "NOT_ENOUGH_FUNDS": "You don't have enough funds in your wallet",
   "BASKET_EMPTY": "Basket is empty",
+  "NO_PRODUCTS": "No products to show",
   "TOTAL": "Total",
   "CHECKOUT_FORM": {
     "FIRST_NAME": "First name",

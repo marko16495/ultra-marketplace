@@ -3,6 +3,7 @@ import {AppState} from '../models/app-state';
 
 export const ProductSelectors = {
   products: (state: AppState) => state.products.products,
+  productsCount: (state: AppState) => state.products.products.length,
   loading: (state: AppState) => state.products.loading,
   hasMore: (state: AppState) => state.products.products.length < state.products.totalElements,
   request: (state: AppState) => state.products.request,

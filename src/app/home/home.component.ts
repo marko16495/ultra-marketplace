@@ -18,6 +18,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   currency$ = this.store.select(AppConfigSelectors.currency);
   productsWithBasketInfo$ = this.store.select(ProductSelectors.productsWithBasketInfo);
+  productsCount$ = this.store.select(ProductSelectors.productsCount);
   hasMore$ = this.store.select(ProductSelectors.hasMore);
   loading$ = this.store.select(ProductSelectors.loading);
 

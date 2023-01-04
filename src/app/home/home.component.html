@@ -1,12 +1,14 @@
 <app-layout>
 
-  <div class="m-auto py-4 app-home--container">
+  <div
+    *ngIf="(loading$ | async) || (productsCount$ | async); else noProductsTemplate"
+    class="m-auto py-4 app-home--container">
 
     <div *ngIf="currency$ | async as currency" class="w-100 row gx-4 gy-5 ms-0">
 
       <app-product
-        class="col-12 col-sm-6 col-md-4 col-lg-3"
         *ngFor="let productWithBasketInfo of productsWithBasketInfo$ | async"
+        class="col-12 col-sm-6 col-md-4 col-lg-3"
         [productWithBasketInfo]="productWithBasketInfo"
         [currency]="currency"
         (addToBasket)="addProductToBasket($event.product)"
@@ -27,5 +29,12 @@
     </div>
 
   </div>
+
+  <ng-template #noProductsTemplate>
+    <div class="text-center p-1 p-sm-5 mt-4" data-test="app-home-empty">
+      <i class="bi bi-search fs-1"></i>
+      <div class="fs-3 mt-3">{{'NO_PRODUCTS' | translate}}</div>
+    </div>
+  </ng-template>
 
 </app-layout>

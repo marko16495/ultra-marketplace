@@ -38,10 +38,6 @@ describe('ProductComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeDefined();
-  });
-
   it('should display product name', () => {
     component.currency = 'USD';
     component.productWithBasketInfo = {

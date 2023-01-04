@@ -25,21 +25,3 @@ Run `npm run electron`
 ## Creating a distributable
 
 Run `npm run make`. The build artifacts will be stored in `out/make` directory
-
-# TODO
-
-`[x] Checkout route guard`
-
-`[ ] Add loaders to products page`
-
-`[x] remove Orders`
-
-`[ ] change products page`
-
-`[ ] checkout page input margin bottom`
-
-`[ ] npm test`
-
-`[ ] npm run e2e`
-
-`[ ] npm run electron`

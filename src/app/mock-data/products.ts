@@ -177,4 +177,64 @@ export const INITIAL_PRODUCTS: ProductSerialized[] = [
     price: 49.9,
     img: 'https://i.imgur.com/hk1E372.jpg'
   },
+  {
+    id: 30,
+    name: 'Product 30',
+    price: 329.99,
+    img: 'https://i.imgur.com/hk1E372.jpg'
+  },
+  {
+    id: 31,
+    name: 'Product 31',
+    price: 149.99,
+    img: 'https://i.imgur.com/hk1E372.jpg'
+  },
+  {
+    id: 32,
+    name: 'Product 32',
+    price: 102.99,
+    img: 'https://i.imgur.com/hk1E372.jpg'
+  },
+  {
+    id: 33,
+    name: 'Product 33',
+    price: 25.5,
+    img: 'https://i.imgur.com/hk1E372.jpg'
+  },
+  {
+    id: 34,
+    name: 'Product 34',
+    price: 900,
+    img: 'https://i.imgur.com/hk1E372.jpg'
+  },
+  {
+    id: 35,
+    name: 'Product 35',
+    price: 79.9,
+    img: 'https://i.imgur.com/hk1E372.jpg'
+  },
+  {
+    id: 36,
+    name: 'Product 36',
+    price: 10.9,
+    img: 'https://i.imgur.com/hk1E372.jpg'
+  },
+  {
+    id: 37,
+    name: 'Product 37',
+    price: 89.9,
+    img: 'https://i.imgur.com/hk1E372.jpg'
+  },
+  {
+    id: 38,
+    name: 'Product 38',
+    price: 54.9,
+    img: 'https://i.imgur.com/hk1E372.jpg'
+  },
+  {
+    id: 39,
+    name: 'Product 39',
+    price: 97.9,
+    img: 'https://i.imgur.com/hk1E372.jpg'
+  },
 ];
