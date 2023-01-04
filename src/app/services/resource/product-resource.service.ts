@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {Observable, of} from 'rxjs';
 import {GetProductsRequest} from '../../models/public/get-products-request';
 import {ProductsSerialized} from '../../models/serialized/products-serialized';
-import {randomDelay} from '../../shared/operators/random-delay.operator';
+import {randomDelay} from '../../shared/utils/random-delay.operator';
 import {LocalStorageService} from '../local-storage.service';
 
 @Injectable({

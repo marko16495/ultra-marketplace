@@ -3,7 +3,7 @@ import {cyProducts} from '../data/products';
 
 describe('Ultra Marketplace', () => {
 
-  it('Buy 2 products', () => {
+  it('Buy 1 product', () => {
 
     // go to home page
     cy.visit('http://localhost:4200', {
