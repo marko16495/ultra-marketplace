@@ -1,14 +1,16 @@
 <div class="row w-100">
+
   <img
     [src]="product.product.img"
     [alt]="product.product.name"
+    data-test="app-basket-product-image"
     class="app-basket-product--image">
 
   <div class="col py-2">
-    <div data-test="basket-product-name" class="fw-bold">
+    <div data-test="app-basket-product-name" class="fw-bold">
       {{product.product.name}}
     </div>
-    <div data-test="basket-product-price" class="mb-2">
+    <div data-test="app-basket-product-price" class="mb-2">
       {{product.product.price | currency: currency: 'symbol': '0.0-2'}}
     </div>
   </div>
@@ -17,7 +19,7 @@
     <button
       class="btn"
       [title]="'REMOVE_FROM_BASKET' | translate"
-      data-test="remove-from-basket-button"
+      data-test="app-basket-product-remove-button"
       [disabled]="product.dirty"
       (click)="removeFromBasket.emit(product.product)">
       <i class="bi bi-trash3-fill"></i>

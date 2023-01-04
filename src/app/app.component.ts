@@ -4,7 +4,7 @@ import {AppConfigActions} from './state/actions/app-config-actions';
 import {BasketActions} from './state/actions/basket-actions';
 import {WalletActions} from './state/actions/wallet-actions';
 import {AppState} from './state/models/app-state';
-import {AppConfigSelectors} from './state/selectors/app-config-selectors';
+import {AppSelectors} from './state/selectors/app-selectors';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +13,7 @@ import {AppConfigSelectors} from './state/selectors/app-config-selectors';
 })
 export class AppComponent {
 
-  appConfig$ = this.store.select(AppConfigSelectors.appConfig);
+  ready$ = this.store.select(AppSelectors.ready);
 
   constructor(private readonly store: Store<AppState>) {
     // load application configuration

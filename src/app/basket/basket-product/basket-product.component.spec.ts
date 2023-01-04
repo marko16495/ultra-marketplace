@@ -53,7 +53,7 @@ describe('BasketProductComponent', () => {
     }
     fixture.detectChanges();
     const de = fixture.debugElement;
-    const nameElement = de.nativeElement.querySelector('[data-test="basket-product-name"]') as HTMLElement;
+    const nameElement = de.nativeElement.querySelector('[data-test="app-basket-product-name"]') as HTMLElement;
     expect(nameElement.innerHTML).toContain('Test product');
   });
 
@@ -69,7 +69,7 @@ describe('BasketProductComponent', () => {
     }
     fixture.detectChanges();
     const de = fixture.debugElement;
-    const priceElement = de.nativeElement.querySelector('[data-test="basket-product-price"]') as HTMLElement;
+    const priceElement = de.nativeElement.querySelector('[data-test="app-basket-product-price"]') as HTMLElement;
     expect(priceElement.innerHTML).toContain('$100');
   });
 
@@ -86,7 +86,7 @@ describe('BasketProductComponent', () => {
     }
     fixture.detectChanges();
     const de = fixture.debugElement;
-    const imageElement = de.nativeElement.querySelector('img') as HTMLImageElement;
+    const imageElement = de.nativeElement.querySelector('[data-test="app-basket-product-image"]') as HTMLImageElement;
     expect(imageElement.src).toContain('https://i.imgur.com/hk1E372.jpg');
   });
 
@@ -102,7 +102,7 @@ describe('BasketProductComponent', () => {
     }
     fixture.detectChanges();
     const de = fixture.debugElement;
-    const buttonElement = de.nativeElement.querySelector('[data-test="remove-from-basket-button"]') as HTMLButtonElement;
+    const buttonElement = de.nativeElement.querySelector('[data-test="app-basket-product-remove-button"]') as HTMLButtonElement;
     expect(buttonElement).toBeTruthy();
   });
 

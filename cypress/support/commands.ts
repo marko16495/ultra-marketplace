@@ -22,10 +22,10 @@ function addProductToBasketCommand(productName: string): void {
 }
 
 function removeProductFromBasketCommand(productName: string): void {
-  cy.get(`app-basket-product img[alt="${productName}"]`)
+  cy.get(`[data-test="app-basket-product-image"][alt="${productName}"]`)
     .parent()
     .within(() => {
-      cy.get('[data-test="remove-from-basket-button"]').click();
+      cy.get('[data-test="app-basket-product-remove-button"]').click();
     })
 }
 

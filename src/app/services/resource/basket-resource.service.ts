@@ -13,7 +13,7 @@ export class BasketResourceService {
   constructor(private readonly localStorageService: LocalStorageService) { }
 
   getBasket(): Observable<BasketSerialized> {
-    return of(this.localStorageService.getBasket()).pipe(randomDelay(200, 300));
+    return of(this.localStorageService.getBasket()).pipe(randomDelay(300, 400));
   }
 
   addProduct(productId: number): Observable<BasketSerialized> {

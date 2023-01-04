@@ -42,7 +42,7 @@ describe('CheckoutFormComponent', () => {
     component.totalPrice = 100;
     fixture.detectChanges();
     const de = fixture.debugElement;
-    const submitBtn = de.nativeElement.querySelector('.btn-primary') as HTMLButtonElement;
+    const submitBtn = de.nativeElement.querySelector('[data-test="app-checkout-form-pay"]') as HTMLButtonElement;
     expect(submitBtn.disabled).toBe(true);
   });
 
@@ -51,8 +51,8 @@ describe('CheckoutFormComponent', () => {
     component.totalPrice = 199;
     fixture.detectChanges();
     const de = fixture.debugElement;
-    const totalPriceElement = de.nativeElement.querySelector('[data-test="total-price"]') as HTMLElement;
-    expect(totalPriceElement.innerHTML).toContain('$199');
+    const totalPrice = de.nativeElement.querySelector('[data-test="app-checkout-form-total-price"]') as HTMLElement;
+    expect(totalPrice.innerHTML).toContain('$199');
   });
 
   it('submit button should be enabled when form is valid', async () => {
@@ -60,15 +60,15 @@ describe('CheckoutFormComponent', () => {
     component.totalPrice = 100;
     fixture.detectChanges();
     const de = fixture.debugElement;
-    setInputValue(de.nativeElement, 'firstName', 'Marko');
-    setInputValue(de.nativeElement, 'lastName', 'Vujovic');
-    setInputValue(de.nativeElement, 'street', 'Kralja Nikole');
-    setInputValue(de.nativeElement, 'city', 'Podgorica');
-    setInputValue(de.nativeElement, 'state', 'Montenegro');
-    setInputValue(de.nativeElement, 'email', 'markovujovic1604@gmail.com');
+    setInputValue(de.nativeElement, 'app-checkout-form-firstName', 'Marko');
+    setInputValue(de.nativeElement, 'app-checkout-form-lastName', 'Vujovic');
+    setInputValue(de.nativeElement, 'app-checkout-form-street', 'Kralja Nikole');
+    setInputValue(de.nativeElement, 'app-checkout-form-city', 'Podgorica');
+    setInputValue(de.nativeElement, 'app-checkout-form-state', 'Montenegro');
+    setInputValue(de.nativeElement, 'app-checkout-form-email', 'markovujovic1604@gmail.com');
     fixture.detectChanges();
 
-    const submitBtn = de.nativeElement.querySelector('.btn-primary') as HTMLButtonElement;
+    const submitBtn = de.nativeElement.querySelector('[data-test="app-checkout-form-pay"]') as HTMLButtonElement;
     expect(submitBtn.disabled).toBe(false);
   });
 
@@ -77,15 +77,15 @@ describe('CheckoutFormComponent', () => {
     component.totalPrice = 100;
     fixture.detectChanges();
     const de = fixture.debugElement;
-    setInputValue(de.nativeElement, 'firstName', 'Marko');
-    setInputValue(de.nativeElement, 'lastName', 'Vujovic');
-    setInputValue(de.nativeElement, 'street', 'Kralja Nikole');
-    setInputValue(de.nativeElement, 'city', 'Podgorica');
-    setInputValue(de.nativeElement, 'state', 'Montenegro');
-    setInputValue(de.nativeElement, 'email', 'markovujovic1604@gmail.com.'); // invalid
+    setInputValue(de.nativeElement, 'app-checkout-form-firstName', 'Marko');
+    setInputValue(de.nativeElement, 'app-checkout-form-lastName', 'Vujovic');
+    setInputValue(de.nativeElement, 'app-checkout-form-street', 'Kralja Nikole');
+    setInputValue(de.nativeElement, 'app-checkout-form-city', 'Podgorica');
+    setInputValue(de.nativeElement, 'app-checkout-form-state', 'Montenegro');
+    setInputValue(de.nativeElement, 'app-checkout-form-email', 'markovujovic1604@gmail.com.'); // invalid
     fixture.detectChanges();
 
-    const submitBtn = de.nativeElement.querySelector('.btn-primary') as HTMLButtonElement;
+    const submitBtn = de.nativeElement.querySelector('[data-test="app-checkout-form-pay"]') as HTMLButtonElement;
     expect(submitBtn.disabled).toBe(true);
   });
 });

@@ -6,6 +6,7 @@
   <img
     [src]="productWithBasketInfo.product.img"
     [alt]="productWithBasketInfo.product.name"
+    data-test="app-product-image"
     class="mb-2 w-100 app-product--image">
 
   <div data-test="app-product-name" class="fw-bold">
@@ -23,7 +24,13 @@
     [disabled]="productWithBasketInfo.dirty"
     (click)="addToBasket.emit(productWithBasketInfo)">
     <i *ngIf="!productWithBasketInfo.dirty" class="bi bi-cart-plus"></i>
-    <span *ngIf="productWithBasketInfo.dirty" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+    <span
+      *ngIf="productWithBasketInfo.dirty"
+      class="spinner-border spinner-border-sm"
+      data-test="app-product-spinner"
+      role="status"
+      aria-hidden="true">
+    </span>
     {{'ADD_TO_BASKET' | translate}}
   </button>
 
@@ -34,7 +41,13 @@
       [disabled]="productWithBasketInfo.dirty"
       (click)="removeFromBasket.emit(productWithBasketInfo)">
       <i *ngIf="!productWithBasketInfo.dirty" class="bi bi-cart-minus"></i>
-      <span *ngIf="productWithBasketInfo.dirty" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+      <span
+        *ngIf="productWithBasketInfo.dirty"
+        class="spinner-border spinner-border-sm"
+        data-test="app-product-spinner"
+        role="status"
+        aria-hidden="true">
+      </span>
       {{'REMOVE_FROM_BASKET' | translate}}
     </button>
   </ng-template>

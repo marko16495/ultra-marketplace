@@ -90,8 +90,8 @@ describe('ProductComponent', () => {
     }
     fixture.detectChanges();
     const de = fixture.debugElement;
-    const imageElement = de.nativeElement.querySelector('img') as HTMLImageElement;
-    expect(imageElement.src).toContain('https://i.imgur.com/hk1E372.jpg');
+    const image = de.nativeElement.querySelector('[data-test="app-product-image"]') as HTMLImageElement;
+    expect(image.src).toContain('https://i.imgur.com/hk1E372.jpg');
   });
 
   it('should display "Add to basket" button', () => {
@@ -141,7 +141,7 @@ describe('ProductComponent', () => {
     }
     fixture.detectChanges();
     const de = fixture.debugElement;
-    const spinner = de.nativeElement.querySelector('[role="status"]') as HTMLElement;
+    const spinner = de.nativeElement.querySelector('[data-test="app-product-spinner"]') as HTMLElement;
     expect(spinner).toBeTruthy();
   });
 

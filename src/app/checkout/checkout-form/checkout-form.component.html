@@ -3,22 +3,24 @@
   <div class="row g-3 mb-3">
 
     <div class="col-12 col-sm-6">
-      <label for="firstName" class="form-label">{{'CHECKOUT_FORM.FIRST_NAME' | translate}} *</label>
-      <input formControlName="firstName" class="form-control" id="firstName" aria-describedby="firstNameHelp">
+      <label for="app-checkout-form-firstName" class="form-label">{{'CHECKOUT_FORM.FIRST_NAME' | translate}} *</label>
+      <input formControlName="firstName" class="form-control"
+             id="app-checkout-form-firstName" aria-describedby="app-check-form-firstNameHelp">
       <div
         *ngIf="form.controls.firstName.invalid && form.controls.firstName.touched"
-        id="firstNameHelp"
+        id="app-checkout-form-firstNameHelp"
         class="form-text text-danger">
         {{'CHECKOUT_FORM.THIS_FIELD_IS_REQUIRED' | translate}}
       </div>
     </div>
 
     <div class="col-12 col-sm-6">
-      <label for="lastName" class="form-label">{{'CHECKOUT_FORM.LAST_NAME' | translate}} *</label>
-      <input formControlName="lastName" class="form-control" id="lastName" aria-describedby="lastNameHelp">
+      <label for="app-checkout-form-lastName" class="form-label">{{'CHECKOUT_FORM.LAST_NAME' | translate}} *</label>
+      <input formControlName="lastName" class="form-control"
+             id="app-checkout-form-lastName" aria-describedby="app-check-form-lastNameHelp">
       <div
         *ngIf="form.controls.lastName.invalid && form.controls.lastName.touched"
-        id="lastNameHelp"
+        id="app-checkout-form-lastNameHelp"
         class="form-text text-danger">
         {{'CHECKOUT_FORM.THIS_FIELD_IS_REQUIRED' | translate}}
       </div>
@@ -27,11 +29,12 @@
   </div>
 
   <div class="mb-3">
-    <label for="street" class="form-label">{{'CHECKOUT_FORM.STREET' | translate}} *</label>
-    <input formControlName="street" class="form-control" id="street" aria-describedby="streetHelp">
+    <label for="app-checkout-form-street" class="form-label">{{'CHECKOUT_FORM.STREET' | translate}} *</label>
+    <input formControlName="street" class="form-control"
+           id="app-checkout-form-street" aria-describedby="app-check-form-streetHelp">
     <div
       *ngIf="form.controls.street.invalid && form.controls.street.touched"
-      id="streetHelp"
+      id="app-checkout-form-streetHelp"
       class="form-text text-danger">
       {{'CHECKOUT_FORM.THIS_FIELD_IS_REQUIRED' | translate}}
     </div>
@@ -39,22 +42,24 @@
 
   <div class="row g-3 mb-3">
     <div class="col-12 col-sm-6">
-      <label for="city" class="form-label">{{'CHECKOUT_FORM.CITY' | translate}} *</label>
-      <input formControlName="city" class="form-control" id="city" aria-describedby="cityHelp">
+      <label for="app-checkout-form-city" class="form-label">{{'CHECKOUT_FORM.CITY' | translate}} *</label>
+      <input formControlName="city" class="form-control"
+             id="app-checkout-form-city" aria-describedby="app-check-form-cityHelp">
       <div
         *ngIf="form.controls.city.invalid && form.controls.city.touched"
-        id="cityHelp"
+        id="app-checkout-form-cityHelp"
         class="form-text text-danger">
         {{'CHECKOUT_FORM.THIS_FIELD_IS_REQUIRED' | translate}}
       </div>
     </div>
 
     <div class="col-12 col-sm-6">
-      <label for="state" class="form-label">{{'CHECKOUT_FORM.STATE' | translate}} *</label>
-      <input formControlName="state" class="form-control" id="state" aria-describedby="stateHelp">
+      <label for="app-checkout-form-state" class="form-label">{{'CHECKOUT_FORM.STATE' | translate}} *</label>
+      <input formControlName="state" class="form-control"
+             id="app-checkout-form-state" aria-describedby="app-check-form-stateHelp">
       <div
         *ngIf="form.controls.state.invalid && form.controls.state.touched"
-        id="stateHelp"
+        id="app-checkout-form-stateHelp"
         class="form-text text-danger">
         {{'CHECKOUT_FORM.THIS_FIELD_IS_REQUIRED' | translate}}
       </div>
@@ -62,11 +67,12 @@
   </div>
 
   <div class="mb-3">
-    <label for="email" class="form-label">{{'CHECKOUT_FORM.EMAIL' | translate}} *</label>
-    <input formControlName="email" type="email" class="form-control" id="email" aria-describedby="emailHelp">
+    <label for="app-checkout-form-email" class="form-label">{{'CHECKOUT_FORM.EMAIL' | translate}} *</label>
+    <input formControlName="email" type="email" class="form-control"
+           id="app-checkout-form-email" aria-describedby="app-check-form-emailHelp">
     <div
       *ngIf="form.controls.email.invalid && form.controls.email.touched"
-      id="emailHelp"
+      id="app-checkout-form-emailHelp"
       class="form-text text-danger">
       <ng-container *ngIf="form.controls.email.errors!['required']">
         {{'CHECKOUT_FORM.THIS_FIELD_IS_REQUIRED' | translate}}
@@ -77,7 +83,7 @@
     </div>
   </div>
 
-  <div class="my-4" data-test="total-price">
+  <div class="my-4" data-test="app-checkout-form-total-price">
     {{'TOTAL' | translate}}:
     {{totalPrice | currency: currency!: 'symbol': '0.0-2'}}
   </div>
@@ -87,7 +93,7 @@
     [disabled]="form.invalid"
     type="button"
     data-test="app-checkout-form-pay"
-    (click)="checkout.emit(form.value)">
+    (click)="onSubmit()">
     {{'CHECKOUT_FORM.PAY' | translate}}
   </button>
 

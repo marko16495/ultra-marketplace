@@ -58,16 +58,16 @@ describe('Ultra Marketplace', () => {
       .should('eq', 2)
 
     // go to checkout page
-    cy.get('[data-test="checkout-button"]').click();
+    cy.get('[data-test="app-basket-checkout-button"]').click();
     cy.url().should('include', '/checkout');
 
     // fill in form inputs
-    cy.get('#firstName').type('Marko');
-    cy.get('#lastName').type('Vujovic');
-    cy.get('#street').type('Kralja Nikole');
-    cy.get('#city').type('Podgorica');
-    cy.get('#state').type('Montenegro');
-    cy.get('#email').type('markovujovic1604@gmail.com');
+    cy.get('#app-checkout-form-firstName').type('Marko');
+    cy.get('#app-checkout-form-lastName').type('Vujovic');
+    cy.get('#app-checkout-form-street').type('Kralja Nikole');
+    cy.get('#app-checkout-form-city').type('Podgorica');
+    cy.get('#app-checkout-form-state').type('Montenegro');
+    cy.get('#app-checkout-form-email').type('markovujovic1604@gmail.com');
 
     // submit form
     cy.get('[data-test="app-checkout-form-pay"]').click();

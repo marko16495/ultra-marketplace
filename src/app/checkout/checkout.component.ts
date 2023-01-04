@@ -20,7 +20,6 @@ export class CheckoutComponent {
   totalPrice$ = this.store.select(BasketSelectors.totalPrice);
   currency$ = this.store.select(AppConfigSelectors.currency);
   inProgress$ = this.store.select(CheckoutSelectors.inProgress);
-  productsCount$ = this.store.select(BasketSelectors.productsCount);
 
   checkoutComplete$ = this.actions$.pipe(
     ofType(CheckoutActions.CHECKOUT_SUCCESS),
@@ -32,8 +31,8 @@ export class CheckoutComponent {
     private readonly actions$: Actions,
   ) { }
 
-  checkout(value: CheckoutRequest) {
-    this.store.dispatch(CheckoutActions.CHECKOUT_INIT({checkoutRequest: {...value}}))
+  checkout(checkoutRequest: CheckoutRequest) {
+    this.store.dispatch(CheckoutActions.CHECKOUT_INIT({checkoutRequest: checkoutRequest}));
   }
 
 }

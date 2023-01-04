@@ -3,8 +3,8 @@ import {NgModule} from '@angular/core';
 import {TranslateModule} from '@ngx-translate/core';
 import {LayoutModule} from '../layout/layout.module';
 import {BasketRoutingModule} from './basket-routing.module';
-import { BasketComponent } from './basket.component';
-import { BasketProductComponent } from './basket-product/basket-product.component';
+import {BasketComponent} from './basket.component';
+import {BasketProductComponent} from './basket-product/basket-product.component';
 
 @NgModule({
   imports: [
@@ -15,7 +15,7 @@ import { BasketProductComponent } from './basket-product/basket-product.componen
   ],
   declarations: [
     BasketComponent,
-    BasketProductComponent
+    BasketProductComponent,
   ]
 })
 export class BasketModule { }

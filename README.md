@@ -21,3 +21,21 @@ Run `npm run e2e`
 ## Running inside Electron
 
 Run `npm run electron`
+
+# TODO
+
+`[ ] Checkout route guard`
+
+`[ ] Add loaders to products page`
+
+`[ ] remove Orders`
+
+`[ ] change products page`
+
+`[ ] checkout page input margin bottom`
+
+`[ ] npm test`
+
+`[ ] npm run e2e`
+
+`[ ] npm run electron`

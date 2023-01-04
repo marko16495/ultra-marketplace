@@ -13,16 +13,14 @@
       <button
         class="btn"
         [ngClass]="basketProductsCount ? 'btn-outline-primary' : 'btn-light'"
+        data-test="app-header-basket"
         type="button"
         routerLink="/basket">
         <i *ngIf="basketProductsCount; else emptyBasketIcon" class="bi bi-cart-fill me-2"></i>
         <ng-template #emptyBasketIcon>
           <i class="bi bi-cart me-2"></i>
         </ng-template>
-        <span data-test="app-header-basket">
-          {{'BASKET' | translate}}
-          ({{basketProductsCount}})
-        </span>
+        <span>{{'BASKET' | translate}} ({{basketProductsCount}})</span>
       </button>
     </div>
   </div>

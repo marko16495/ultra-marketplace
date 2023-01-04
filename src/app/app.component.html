@@ -1,3 +1,9 @@
-<ng-container *ngIf="appConfig$ | async">
+<ng-container *ngIf="ready$ | async; else loaderTemplate">
   <router-outlet></router-outlet>
 </ng-container>
+
+<ng-template #loaderTemplate>
+  <div class="vw-100 wh-100 p-relative">
+    <app-loader [opacity]="100"></app-loader>
+  </div>
+</ng-template>

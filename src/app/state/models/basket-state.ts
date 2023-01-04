@@ -2,7 +2,7 @@ import {Product} from '../../models/public/product';
 
 export interface BasketState {
   /** Products in basket */
-  products: Product[];
+  products?: Product[];
   loading: boolean;
   /**
    * Contains ids of products that are being added to basket or removed.

@@ -4,7 +4,6 @@ import {BasketState} from '../models/basket-state';
 
 
 const initialState: BasketState = {
-  products: [],
   loading: false,
   dirtyProductIds: [],
 }

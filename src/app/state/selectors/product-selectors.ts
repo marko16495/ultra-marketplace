@@ -8,7 +8,7 @@ export const ProductSelectors = {
   request: (state: AppState) => state.products.request,
   productsWithBasketInfo: (state: AppState): ProductWithBasketInfo[] => {
     const products = state.products.products;
-    const basketProducts = state.basket.products;
+    const basketProducts = state.basket.products!;
     return products.map(product => ({
       product: product,
       inBasket: basketProducts.findIndex(p => p.id === product.id) !== -1,

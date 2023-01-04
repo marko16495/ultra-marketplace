@@ -76,8 +76,8 @@ describe('BasketComponent', () => {
     })
     fixture.detectChanges();
     const de = fixture.debugElement;
-    const emptyStateElement = de.nativeElement.querySelector('[data-test="basket-empty"]') as HTMLElement;
-    expect(emptyStateElement).toBeTruthy();
+    const emptyState = de.nativeElement.querySelector('[data-test="app-basket-empty"]') as HTMLElement;
+    expect(emptyState).toBeTruthy();
   });
 
   it('should display 3 products', () => {
@@ -107,8 +107,8 @@ describe('BasketComponent', () => {
     });
     fixture.detectChanges();
     const de = fixture.debugElement;
-    const productElements = de.nativeElement.querySelectorAll('app-basket-product') as NodeListOf<HTMLElement>;
-    expect(productElements.length).toBe(3);
+    const products = de.nativeElement.querySelectorAll('app-basket-product') as NodeListOf<HTMLElement>;
+    expect(products.length).toBe(3);
   });
 
   it('should display total price', () => {
@@ -133,8 +133,8 @@ describe('BasketComponent', () => {
     });
     fixture.detectChanges();
     const de = fixture.debugElement;
-    const totalPriceElement = de.nativeElement.querySelector('[data-test="total-price"]');
-    expect(totalPriceElement.innerHTML).toContain('$300')
+    const totalPrice = de.nativeElement.querySelector('[data-test="app-basket-total-price"]');
+    expect(totalPrice.innerHTML).toContain('$300')
   });
 
   it('checkout button should be disabled', () => {
@@ -165,8 +165,8 @@ describe('BasketComponent', () => {
     });
     fixture.detectChanges();
     const de = fixture.debugElement;
-    const checkoutButton = de.nativeElement.querySelector('[data-test="checkout-button"]') as HTMLButtonElement;
-    expect(checkoutButton.disabled).toBe(true)
+    const checkoutBtn = de.nativeElement.querySelector('[data-test="app-basket-checkout-button"]') as HTMLButtonElement;
+    expect(checkoutBtn.disabled).toBe(true)
   });
 
   it('checkout button should be enabled', () => {
@@ -192,8 +192,8 @@ describe('BasketComponent', () => {
     });
     fixture.detectChanges();
     const de = fixture.debugElement;
-    const checkoutButton = de.nativeElement.querySelector('[data-test="checkout-button"]') as HTMLButtonElement;
-    expect(checkoutButton.disabled).toBe(false)
+    const checkoutBtn = de.nativeElement.querySelector('[data-test="app-basket-checkout-button"]') as HTMLButtonElement;
+    expect(checkoutBtn.disabled).toBe(false)
   });
 
 

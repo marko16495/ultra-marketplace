@@ -11,7 +11,7 @@
         </app-basket-product>
       </div>
       <hr>
-      <div data-test="total-price">
+      <div data-test="app-basket-total-price">
         {{'TOTAL_PRICE' | translate}}:
         {{totalPrice$ | async | currency: (currency$ | async)!: 'symbol': '0.0-2'}}
       </div>
@@ -21,7 +21,7 @@
           class="btn btn-primary"
           [disabled]="!(balanceSufficient$ | async)"
           routerLink="/checkout"
-          data-test="checkout-button">
+          data-test="app-basket-checkout-button">
           {{'CHECKOUT' | translate}}
         </button>
         <span *ngIf="!(balanceSufficient$ | async)" class="text-danger p-2">{{'NOT_ENOUGH_FUNDS' | translate}}</span>
@@ -29,7 +29,7 @@
     </ng-container>
 
     <ng-template #emptyBasketTemplate>
-      <div class="text-center p-1 p-sm-5" data-test="basket-empty">
+      <div class="text-center p-1 p-sm-5" data-test="app-basket-empty">
         <i class="bi bi-cart fs-1"></i>
         <div class="fs-3">{{'BASKET_EMPTY' | translate}}</div>
       </div>

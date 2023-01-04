@@ -13,7 +13,7 @@ export class WalletResourceService {
 
   getWallet(): Observable<WalletSerialized> {
     return of(this.localStorageService.getWallet())
-      .pipe(randomDelay(200, 400))
+      .pipe(randomDelay(200, 300))
   }
 
 }

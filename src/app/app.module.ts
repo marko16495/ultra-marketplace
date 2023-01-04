@@ -11,6 +11,7 @@ import {environment} from '../environments/environment';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
+import {LoaderModule} from './shared/loader/loader.module';
 import {AppConfigEffects} from './state/effects/app-config-effects';
 import {BasketEffects} from './state/effects/basket-effects';
 import {CheckoutEffects} from './state/effects/checkout-effects';
@@ -52,9 +53,9 @@ export function createTranslateLoader(http: HttpClient) {
       }
     }),
     CommonModule,
+    LoaderModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {
-}
+export class AppModule { }
