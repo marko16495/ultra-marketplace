@@ -28,11 +28,11 @@ Run `npm run make`. The build artifacts will be stored in `out/make` directory
 
 # TODO
 
-`[ ] Checkout route guard`
+`[x] Checkout route guard`
 
 `[ ] Add loaders to products page`
 
-`[ ] remove Orders`
+`[x] remove Orders`
 
 `[ ] change products page`
 

@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {createEffect, Actions, ofType} from '@ngrx/effects';
 import {Store} from '@ngrx/store';
-import {switchMap, map, catchError, of, withLatestFrom, filter} from 'rxjs';
+import {switchMap, map, catchError, of, withLatestFrom, filter, takeUntil} from 'rxjs';
 import {ProductDataService} from '../../services/data/product-data.service';
 import {ProductActions} from '../actions/products-actions';
 import {AppState} from '../models/app-state';
@@ -21,7 +21,9 @@ export class ProductEffects {
   loadProducts$ = createEffect(() =>
     this.actions$.pipe(
       ofType(ProductActions.LOAD_INIT),
-      switchMap((action) => this.productDataService.getProducts(action.request)),
+      switchMap((action) => this.productDataService.getProducts(action.request).pipe(
+        takeUntil(this.actions$.pipe(ofType(ProductActions.CLEAR)))
+      )),
       map(products => ProductActions.LOAD_SUCCESS({products: products})),
       catchError(error => of(ProductActions.LOAD_FAILURE({error: error})))
     )
