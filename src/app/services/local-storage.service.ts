@@ -1,13 +1,11 @@
-import {Injectable, Inject} from '@angular/core';
+import {Injectable} from '@angular/core';
 import {environment} from '../../environments/environment';
 import {INITIAL_APP_CONFIG} from '../mock-data/app-config';
 import {INITIAL_BASKET} from '../mock-data/basket';
-import {INITIAL_ORDERS} from '../mock-data/orders';
 import {INITIAL_PRODUCTS} from '../mock-data/products';
 import {INITIAL_WALLET} from '../mock-data/wallet';
 import {AppConfigSerialized} from '../models/serialized/app-config-serialized';
 import {BasketSerialized} from '../models/serialized/basket-serialized';
-import {OrderSerialized} from '../models/serialized/order-serialized';
 import {ProductSerialized} from '../models/serialized/product-serialized';
 import {WalletSerialized} from '../models/serialized/wallet-serialized';
 
@@ -19,31 +17,21 @@ export class LocalStorageService {
   private readonly productsKey = environment.localStorageKeys.products;
   private readonly basketKey = environment.localStorageKeys.basket;
   private readonly walletKey = environment.localStorageKeys.wallet;
-  private readonly ordersKey = environment.localStorageKeys.orders;
   private readonly appConfigKey = environment.localStorageKeys.appConfig;
 
-  constructor(
-    @Inject(INITIAL_BASKET) private readonly BASKET: BasketSerialized,
-    @Inject(INITIAL_PRODUCTS) private readonly PRODUCTS: ProductSerialized[],
-    @Inject(INITIAL_WALLET) private readonly WALLET: WalletSerialized[],
-    @Inject(INITIAL_ORDERS) private readonly ORDERS: OrderSerialized[],
-    @Inject(INITIAL_APP_CONFIG) private readonly APP_CONFIG: AppConfigSerialized,
-  ) {
+  constructor( ) {
     // set default values
     if (!localStorage.getItem(this.productsKey)) {
-      localStorage.setItem(this.productsKey, JSON.stringify(this.PRODUCTS));
+      localStorage.setItem(this.productsKey, JSON.stringify(INITIAL_PRODUCTS));
     }
     if (!localStorage.getItem(this.basketKey)) {
-      localStorage.setItem(this.basketKey, JSON.stringify(this.BASKET));
+      localStorage.setItem(this.basketKey, JSON.stringify(INITIAL_BASKET));
     }
     if (!localStorage.getItem(this.walletKey)) {
-      localStorage.setItem(this.walletKey, JSON.stringify(this.WALLET));
-    }
-    if (!localStorage.getItem(this.ordersKey)) {
-      localStorage.setItem(this.ordersKey, JSON.stringify(this.ORDERS));
+      localStorage.setItem(this.walletKey, JSON.stringify(INITIAL_WALLET));
     }
     if (!localStorage.getItem(this.appConfigKey)) {
-      localStorage.setItem(this.appConfigKey, JSON.stringify(this.APP_CONFIG));
+      localStorage.setItem(this.appConfigKey, JSON.stringify(INITIAL_APP_CONFIG));
     }
   }
 
@@ -57,10 +45,6 @@ export class LocalStorageService {
 
   getWallet(): WalletSerialized {
     return JSON.parse(localStorage.getItem(this.walletKey)!);
-  }
-
-  getOrders(): OrderSerialized[] {
-    return JSON.parse(localStorage.getItem(this.ordersKey)!);
   }
 
   getAppConfig(): AppConfigSerialized {
@@ -79,10 +63,6 @@ export class LocalStorageService {
 
   setWallet(wallet: WalletSerialized) {
     localStorage.setItem(this.walletKey, JSON.stringify(wallet));
-  }
-
-  setOrders(orders: OrderSerialized[]) {
-    localStorage.setItem(this.ordersKey, JSON.stringify(orders));
   }
 
   setAppConfig(appConfigSerialized: AppConfigSerialized) {

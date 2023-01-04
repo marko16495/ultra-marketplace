@@ -28,20 +28,7 @@ export class CheckoutResourceService {
     this.localStorageService.setBasket({
       products: []
     });
-    // store order
-    this.localStorageService.setOrders([
-      ...this.localStorageService.getOrders(),
-      {
-        time: new Date().toISOString(),
-        products: basket.products,
-        firstName: request.firstName,
-        lastName: request.lastName,
-        street: request.street,
-        city: request.city,
-        state: request.state,
-        email: request.email,
-      }
-    ]);
+    // create response
     const response = new HttpResponse({
       body: undefined,
       status: HttpStatusCode.Ok
