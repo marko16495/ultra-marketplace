@@ -1,6 +1,6 @@
 # Ultra Marketplace
 
-**NOTE**: All data is stored in `localStorage`, i.e. it is used in place of a backend.
+**NOTE**: All data is stored in `localStorage`, i.e. it is used in place of backend.
 
 ## Development server
 
@@ -21,6 +21,10 @@ Run `npm run e2e`
 ## Running inside Electron
 
 Run `npm run electron`
+
+## Creating a distributable
+
+Run `npm run make`. The build artifacts will be stored in `out/make` directory
 
 # TODO
 
